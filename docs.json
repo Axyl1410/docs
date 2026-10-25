@@ -1,13 +1,22 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Sora CLI",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#00A6F4",
+    "light": "#38BDF8",
+    "dark": "#0284C7"
   },
-  "favicon": "/favicon.svg",
+  "background": {
+    "color": {
+      "light": "#ffffff",
+      "dark": "#080808"
+    }
+  },
+  "favicon": {
+    "light": "/favicon.svg",
+    "dark": "/favicon-dark.svg"
+  },
   "navigation": {
     "pages": [
       {
@@ -16,19 +25,41 @@
           "index",
           "quickstart"
         ]
+      },
+      {
+        "group": "Commands",
+        "pages": [
+          "commands/add",
+          "commands/list",
+          "commands/diff",
+          "commands/doctor"
+        ]
+      },
+      {
+        "group": "Architecture & Guides",
+        "pages": [
+          "guides/universal-addressing",
+          "guides/registries",
+          "guides/monorepos"
+        ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Sora UI",
+          "href": "https://ui.soralabs.studio",
+          "icon": "sparkles"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "NPM",
+          "href": "https://www.npmjs.com/package/@soralabs/cli",
+          "icon": "npm"
+        },
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/SoraLabsOSS/cli",
+          "icon": "github"
         }
       ]
     }
@@ -40,14 +71,22 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:support@mintlify.com"
+        "label": "Components",
+        "href": "https://ui.soralabs.studio/catalog"
+      },
+      {
+        "label": "Motion",
+        "href": "https://ui.soralabs.studio/motion"
+      },
+      {
+        "label": "Icons",
+        "href": "https://ui.soralabs.studio/icons"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "GitHub",
+      "href": "https://github.com/SoraLabsOSS/cli"
     }
   },
   "contextual": {
@@ -56,17 +95,15 @@
       "view",
       "chatgpt",
       "claude",
-      "perplexity",
-      "mcp",
       "cursor",
       "vscode"
     ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/axyl1410",
+      "github": "https://github.com/SoraLabsOSS/cli",
+      "website": "https://ui.soralabs.studio"
     }
   }
 }

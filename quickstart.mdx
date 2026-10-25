@@ -1,47 +1,75 @@
 ---
 title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+description: "Start installing Sora UI and shadcn components in under a minute"
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+Follow this guide to configure your project and install your first component.
 
 ## Prerequisites
 
-Before you begin, you must have:
+1. **Node.js**: Version 18.0.0 or higher.
+2. **Project Setup**: Ensure your project has Tailwind CSS and import aliases (`@/*`) configured. If starting fresh, run:
+   ```bash
+   npx shadcn@latest init
+   ```
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
+## Step 1: Install your first component
 
-## Get started
+Run the CLI with your package manager of choice. No global install is necessary:
 
-<Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+<CodeGroup>
+```bash pnpm
+pnpm dlx @soralabs/cli@latest add text-effect
+```
 
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+```bash bun
+bunx --bun @soralabs/cli@latest add text-effect
+```
 
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
+```bash npm
+npx @soralabs/cli@latest add text-effect
+```
 
-    ```bash
-    your-cli start
-    ```
-  </Step>
-</Steps>
+```bash yarn
+yarn dlx @soralabs/cli@latest add text-effect
+```
+</CodeGroup>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+When executed, the CLI will:
+1. Fetch component schema and animation code from `https://ui.soralabs.studio/r/text-effect.json`.
+2. Automatically resolve required npm packages (e.g. `motion`, `clsx`, `tailwind-merge`).
+3. Place component files into your project under `components/sora-ui/`.
+4. Run your package manager install command in the background.
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+## Step 2: Interactive picker
+
+If you want to explore available components visually, invoke `add` without specifying a component name:
+
+```bash
+npx @soralabs/cli add
+```
+
+Use your arrow keys to scroll, press `Space` to select multiple components, and hit `Enter` to install.
+
+## Step 3: Run diagnostics
+
+Run `doctor` at any time to verify that your project environment is fully compatible:
+
+```bash
+npx @soralabs/cli doctor
+```
+
+This verifies:
+- Node.js runtime version compatibility (`>= 18`).
+- Existence and configuration of `tailwind.config.*`.
+- Detection of the active package manager and lockfile.
+- Registry network connectivity and latency.
+- Whether a newer version of `@soralabs/cli` is available.
+
+---
+
+## Helpful Links
+
+- [Sora UI Component Catalog](https://ui.soralabs.studio/catalog)
+- [Sora UI Motion Primitives](https://ui.soralabs.studio/motion)
+- [GitHub Repository](https://github.com/SoraLabsOSS/cli)
